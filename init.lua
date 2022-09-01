@@ -9,7 +9,7 @@ minetest.register_craft({
 	output = "pelmen",
 	recipe = {
 		{"","farming:flour",""},
-		{"","extra:ground_meat",""},
+		{"","mobs:pork_raw",""},
 		{"","farming:flour",""}
 	}
 })
