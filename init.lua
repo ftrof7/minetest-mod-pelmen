@@ -13,19 +13,3 @@ minetest.register_craft({
 		{"","farming:flour",""}
 	}
 })
-core.register_node("pelmen:pelmen_block",
-description = "Pelmen block",
-inventory_image = "pelmen.png",
-wield_image = "pelmen.png",
-tiles={"pelmen_block.png"}
-on_use = minetest.item_eat(4),
-groups = {food_pelmen = 1, fleshy = 3, dig_immediate = 3, flammable = 2}
-})
-minetest.register_craft({
-	output = "pelmen:pelmen_block",
-	recipe = {
-		{"pelmen:pelmen","pelmen:pelmen","pelmen:pelmen"},
-		{"pelmen:pelmen","pelmen:pelmen","pelmen:pelmen"},
-		{"pelmen:pelmen","pelmen:pelmen","pelmen:pelmen"}
-	}
-})
