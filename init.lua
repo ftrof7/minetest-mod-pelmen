@@ -91,7 +91,7 @@ minetest.register_craftitem("pelmen:pelmen_rotten",{
 description = "Pelmen rotten",
 inventory_image = "pelmen_r.png",
 wield_image = "pelmen_r.png",
-on_use = minetest.item_eat(1),
+on_use = minetest.item_eat(-65600),
 groups = {food_pelmen = 1, fleshy = 3, dig_immediate = 3, flammable = 2}
 })
 minetest.register_craft({
