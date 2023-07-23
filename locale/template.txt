@@ -1,0 +1,7 @@
+# textdomain: pelmen
+Pelmen=
+Pelmen boiled=
+Pelmen in package=
+Pelmen rotten=
+Pelmen block=
+Pelmen block boiled=
