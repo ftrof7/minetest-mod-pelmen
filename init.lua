@@ -1,37 +1,43 @@
 local S = minetest.get_translator("pelmen")
 
 local items = {
-    {"pelmen", "Pelmen", 4},
-    {"pelmen_boiled", "Pelmen boiled", 6},
-    {"pelmen_package", "Pelmen package", 16},
-    {"pelmen_rotten", "Pelmen rotten", -20},
+    -- name, desc, eat (w/o "pelmen")
+    {"", "", 4},
+    {"_boiled", " boiled", 6},
+    {"_package", " package", 16},
+    {"_rotten", " rotten", -20},
 }
 
 local nodes = {
-    {"pelmen_block", "Pelmen block", 20},
-    {"pelmen_block_boiled", "Pelmen block boiled", 30},
+    -- name, desc, eat (w/o "pelmen")
+    {"_block", " block", 20},
+    {"_block_boiled", " block boiled", 30},
 }
 
+-- register items
 for _, row in ipairs(items) do
+    -- assign local = row
     local name = row[1]
     local desc = row[2]
     local eat = row[3]
 
-    minetest.register_craftitem("pelmen:"..name,{
-        description = S(desc),
-        inventory_image = name..".png",
+    minetest.register_craftitem("pelmen:pelmen"..name,{
+        description = S("Pelmen"..desc),
+        inventory_image = "pelmen"..name..".png",
         on_use = minetest.item_eat(eat),
     })
 end
 
+-- register nodes
 for _, row in ipairs(nodes) do
+    -- assign local = row
     local name = row[1]
     local desc = row[2]
     local eat = row[3]
 
-    minetest.register_node("pelmen:"..name, {
-        description = S(desc),
-        tiles = {name..".png"},
+    minetest.register_node("pelmen:pelmen"..name, {
+        description = S("Pelmen"..desc),
+        tiles = {"pelmen"..name..".png"},
         groups = {choppy = 1, oddly_breakable_by_hand = 1, flammable = 2},
         on_use = minetest.item_eat(eat)
     })
